@@ -296,7 +296,7 @@ main(int argc, char* argv[])
   if (do_live) {
     auto service = MLSClientImpl{};
     auto addr_stream = std::stringstream{};
-    addr_stream << "0.0.0.0:" << FLAGS_live;
+    addr_stream << "127.0.0.1:" << FLAGS_live;
     auto server_address = addr_stream.str();
 
     grpc::EnableDefaultHealthCheckService(true);

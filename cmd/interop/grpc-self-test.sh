@@ -5,10 +5,10 @@ PORT=50001
 INTEROP_DIR=./build/third_party/src/mls-interop-extern/interop/
 
 # Launch the interop client
-make
-${BIN} -live ${PORT} &
-BIN_PID=$!
-sleep 1
+#make
+#${BIN} -live ${PORT} &
+#BIN_PID=$!
+#sleep 1
 
 # Build the test runner
 cd ${INTEROP_DIR}
@@ -21,7 +21,7 @@ have_error=0
 for name in `find ${INTEROP_DIR}/configs -name "*.json"`;
 do
     echo $name
-    ${INTEROP_DIR}/test-runner/test-runner -client localhost:50001 -public -suite 1 -config $name | grep error
+    ${INTEROP_DIR}/test-runner/test-runner -client 127.0.0.1:50001 -public -suite 1 -config $name | grep error
     if [ $? == 0 ]
     then
       have_error=1

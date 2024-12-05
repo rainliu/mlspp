@@ -4,3 +4,6 @@ out
 .vs/**
 .vscode/**
 include/namespace.h
+.idea
+**/cmake-build-debug
+vcpkg

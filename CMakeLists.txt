@@ -134,6 +134,8 @@ target_include_directories(${LIB_NAME}
 
 install(TARGETS ${LIB_NAME} EXPORT mlspp-targets)
 
+add_subdirectory(cmd/interop)
+
 ###
 ### Tests
 ###
